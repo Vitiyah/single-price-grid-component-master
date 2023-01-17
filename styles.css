@@ -1,0 +1,198 @@
+/* ----------------------------------------------------------
+Global Variables
+---------------------------------------------------------- */
+
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --gray-blue: hsl(218, 22%, 67%);
+  --white: #fff;
+  --font-size: 16px;
+  --font-family: "Karla", sans-serif;
+}
+
+/* ----------------------------------------------------------
+Global Styling
+---------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 130vh;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background: var(--light-gray);
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------------------------------
+Card Styling
+---------------------------------------------------------- */
+
+[class^="card-"] {
+  width: 20rem;
+  height: 16rem;
+  display: grid;
+  place-items: center;
+}
+
+[class^="card-"]:first-child {
+  border-radius: 5px 5px 0 0;
+}
+
+[class^="card-"]:last-child {
+  border-radius: 0 0 5px 5px;
+}
+
+.card-1 {
+  background: var(--white);
+}
+
+.card-2,
+.card-3 {
+  background: var(--cyan);
+}
+
+.card-3 {
+  opacity: 0.8;
+}
+
+/* ----------------------------------------------------------
+Text Styling
+---------------------------------------------------------- */
+
+.inner,
+.inner-2,
+.inner-3 {
+  width: 85%;
+  height: 80%;
+}
+
+.inner h4,
+.inner p,
+.inner-2 h4,
+.inner-2 p,
+.inner-3 h4,
+.inner-3 p {
+  margin-top: 1rem;
+}
+
+.inner p,
+.inner-2 p,
+.inner-3 p {
+  line-height: 1.5rem;
+  font-size: 14px;
+}
+
+.inner h3 {
+  color: var(--cyan);
+}
+
+.inner h4 {
+  color: var(--yellow);
+}
+
+.inner p {
+  color: var(--gray-blue);
+}
+
+.inner-2 h3,
+.inner-3 h3 {
+  color: var(--light-gray);
+}
+
+.inner-2 h4 {
+  color: var(--light-gray);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.inner-2 span {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-left: 0.5rem;
+}
+
+.inner-2 p {
+  color: var(--light-gray);
+}
+
+button {
+  margin-top: 2rem;
+  width: 17rem;
+  height: 3rem;
+  background: var(--yellow);
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.inner-3-text p {
+  color: var(--white);
+  opacity: 0.6;
+  line-height: 0.05rem;
+  font-size: 14px;
+  margin-top: 1.5rem;
+}
+
+/* ----------------------------------------------------------
+Media Query Styling
+---------------------------------------------------------- */
+
+@media screen and (min-width: 1440px) {
+  body {
+    height: 100vh;
+  }
+  .container {
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas:
+      "A A"
+      "B C";
+  }
+  .card-1 {
+    width: 40rem;
+    grid-area: A;
+  }
+  .card-2 {
+    grid-area: B;
+  }
+  .card-3 {
+    grid-area: C;
+  }
+  [class^="card-"]:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+  [class^="card-"]:last-child {
+    border-radius: 0 0 10px 0;
+  }
+  [class^="card-"]:nth-child(2) {
+    border-radius: 0 0 0 10px;
+  }
+  .inner h3 {
+    margin-top: 2rem;
+  }
+  .inner h4 {
+    margin-top: 2rem;
+  }
+  .inner p {
+    margin-top: 2rem;
+  }
+}
